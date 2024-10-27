@@ -1,0 +1,24 @@
+
+    resource "cloudflare_firewall_rule" "block_ja3_hash" {
+  zone_id = "your-zone-id"
+  description = "Block bot traffic by JA3 hash"
+  
+  # Filter for JA3 hash
+  filter {
+    expression = "(cf.bot_management.ja3_hash == \"your_ja3_hash_value\")"
+  }
+
+  action = "block"
+  priority = 1
+
+
+ Filter for JA3 hash
+  filter {
+    expression = "(cf.bot_management.ja3_hash == \"your_ja3_hash_value\")"
+  }
+
+  action = "managed_challenge"
+  priority = 1
+
+  
+}
